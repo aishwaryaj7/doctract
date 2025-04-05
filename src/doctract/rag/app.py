@@ -88,7 +88,7 @@ So go ahead: Upload a file, adjust your settings, and start chatting with your d
 
         st.header("🎬 Doctract Application Working Demo")
         st.markdown("Watch the video below to understand how DocuChat works.")
-        # st.video("https://www.youtube.com/embed/your_demo_video_id")
+        st.video("data/rag_demo.mp4")
 
     with tab2:
 
