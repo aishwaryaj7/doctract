@@ -1,6 +1,6 @@
 import psycopg2
 from llama_index.vector_stores.postgres import PGVectorStore
-from src.doctract.constants import *
+from doctract.constants import *
 
 
 def recreate_postgres_database(database_name: str) -> None:
@@ -39,7 +39,7 @@ def initialize_pgvector_store() -> PGVectorStore:
     Returns:
         PGVectorStore: Configured PGVectorStore instance.
     """
-    recreate_postgres_database(TARGET_DATABASE_NAME)
+    # recreate_postgres_database(TARGET_DATABASE_NAME)
     vector_store_instance = PGVectorStore.from_params(
         database=TARGET_DATABASE_NAME,
         host=POSTGRES_HOST,

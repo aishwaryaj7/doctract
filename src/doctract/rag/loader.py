@@ -4,10 +4,10 @@ from typing import List, Tuple
 from llama_index.core.node_parser import SentenceSplitter
 from llama_index.readers.file import PyMuPDFReader
 
-from src.doctract.constants import DATA_DIR
+from doctract.constants import DATA_DIR
 
 
-def load_pdf_document_from_data_dir(filename: str) -> List:
+def load_pdf_document_from_data_dir(file_path: Path) -> List:
     """
     Loads a PDF document from the local data directory using PyMuPDF.
 
@@ -17,7 +17,6 @@ def load_pdf_document_from_data_dir(filename: str) -> List:
     Returns:
         List: A list of Document objects parsed from the PDF.
     """
-    file_path: Path = DATA_DIR / filename
     pdf_loader = PyMuPDFReader()
     parsed_documents = pdf_loader.load(file_path=file_path)
     return parsed_documents

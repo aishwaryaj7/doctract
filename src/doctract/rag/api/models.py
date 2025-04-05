@@ -1,8 +1,10 @@
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.llama_cpp import LlamaCPP
+import streamlit as st
 
 
-def load_huggingface_embedding_model(model_name: str = "BAAI/bge-small-en") -> HuggingFaceEmbedding:
+def load_huggingface_embedding_model(
+        model_name: str = "BAAI/bge-small-en") -> HuggingFaceEmbedding:
     """
     Initializes a HuggingFace embedding model for text embeddings.
 
@@ -17,19 +19,17 @@ def load_huggingface_embedding_model(model_name: str = "BAAI/bge-small-en") -> H
     return embedding_model
 
 
+@st.cache_resource
 def load_llama_cpp_language_model(
-    model_url: str = (
-        "https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF/resolve/main/"
-        "llama-2-13b-chat.Q4_0.gguf"
-    ),
-    temperature: float = 0.1,
-    max_tokens: int = 256,
-    context_window: int = 3900,
-    n_gpu_layers: int = 1,
-    verbose: bool = True,
+        model_url: str = "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/mistral-7b-instruct-v0.2.Q4_K_M.gguf"
+        ,
+        temperature: float = 0.1,
+        max_tokens: int = 256,
+        context_window: int = 3900,
+        n_gpu_layers: int = 1,
+        verbose: bool = True,
 ) -> LlamaCPP:
     """
-    Initializes a LLaMA language model using the llama.cpp backend.
 
     Args:
         model_url (str): URL to the model file (.gguf) on Hugging Face.
@@ -44,6 +44,7 @@ def load_llama_cpp_language_model(
     """
     llm_model = LlamaCPP(
         model_url=model_url,
+        # model_path="models/mistral/mistral-7b-v0.1.Q2_K.gguf",
         temperature=temperature,
         max_new_tokens=max_tokens,
         context_window=context_window,
