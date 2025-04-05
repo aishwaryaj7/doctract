@@ -8,6 +8,7 @@
 
 👋 Welcome to the Doctract RAG Assistant — your intelligent, private AI companion that transforms any PDF document into a conversational interface.
 
+---
 ### 🚀 With Doctract, you can effortlessly:
 
 
