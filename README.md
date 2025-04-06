@@ -1,5 +1,8 @@
 # 🧾 Doctract: PDF Document Extraction and RAG Assistant
 
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://aishwaryaj7-doctract.streamlit.app/)
+
 ![Python Version](https://img.shields.io/badge/python-3.11%2B-blue.svg)
 ![Streamlit](https://img.shields.io/badge/streamlit-1.44.1-brightgreen)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14%2B-blue)
